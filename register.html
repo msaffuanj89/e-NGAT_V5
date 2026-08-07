@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daftar Akaun | e-NGAT</title>
+  <meta name="description" content="Pendaftaran pengguna e-NGAT.">
+  <link rel="stylesheet" href="./auth.css?v=20260729-transparent-logo-v25">
+</head>
+<body>
+  <div class="auth-page">
+    <aside class="auth-brand">
+      <img src="./engat-logo-transparent.png" alt="e-NGAT">
+      <h1>Daftar akaun e‑NGAT</h1>
+      <p>Simpan profil pengguna dengan selamat dan akses aplikasi menggunakan akaun sendiri.</p>
+    </aside>
+    <main class="auth-main">
+      <section class="auth-card" aria-labelledby="register-title">
+        <h2 id="register-title">Pendaftaran pengguna</h2>
+        <p class="auth-lead">Lengkapkan maklumat berikut. Semua ruangan diperlukan.</p>
+        <div id="status" class="auth-status" role="alert" hidden></div>
+        <form id="register-form" class="auth-form">
+          <div class="auth-grid">
+            <div class="auth-field auth-field--full">
+              <label for="full-name">Nama penuh</label>
+              <input id="full-name" name="fullName" autocomplete="name" maxlength="120" required>
+            </div>
+            <div class="auth-field">
+              <label for="birth-date">Tarikh lahir</label>
+              <input id="birth-date" name="birthDate" type="date" required>
+            </div>
+            <div class="auth-field">
+              <label for="ipg">IPG tempat bertugas</label>
+              <input id="ipg" name="ipg" list="ipg-list" maxlength="160" required>
+              <datalist id="ipg-list">
+                <option value="IPG Kampus Bahasa Antarabangsa">
+                <option value="IPG Kampus Bahasa Melayu">
+                <option value="IPG Kampus Darulaman">
+                <option value="IPG Kampus Dato' Razali Ismail">
+                <option value="IPG Kampus Gaya">
+                <option value="IPG Kampus Ilmu Khas">
+                <option value="IPG Kampus Ipoh">
+                <option value="IPG Kampus Kent">
+                <option value="IPG Kampus Kota Bharu">
+                <option value="IPG Kampus Perlis">
+                <option value="IPG Kampus Pendidikan Islam">
+                <option value="IPG Kampus Pulau Pinang">
+                <option value="IPG Kampus Rajang">
+                <option value="IPG Kampus Raja Melewar">
+                <option value="IPG Kampus Sarawak">
+                <option value="IPG Kampus Sultan Abdul Halim">
+                <option value="IPG Kampus Tawau">
+                <option value="IPG Kampus Temenggong Ibrahim">
+                <option value="IPG Kampus Tengku Ampuan Afzan">
+                <option value="IPG Kampus Tun Abdul Razak">
+                <option value="IPG Kampus Tun Hussein Onn">
+                <option value="IPG Kampus Tuanku Bainun">
+                <option value="IPG Kampus Keningau">
+                <option value="IPG Kampus Batu Lintang">
+                <option value="IPG Kampus Perempuan Melayu">
+                <option value="IPG Kampus Teknik">
+                <option value="IPG Kampus Pendidikan Teknik">
+              </datalist>
+            </div>
+            <div class="auth-field">
+              <label for="email">Emel</label>
+              <input id="email" name="email" type="email" autocomplete="email" maxlength="160" required>
+            </div>
+            <div class="auth-field">
+              <label for="password">Password</label>
+              <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" required>
+            </div>
+            <div class="auth-field auth-field--full">
+              <label for="password-confirm">Sahkan password</label>
+              <input id="password-confirm" name="passwordConfirm" type="password" autocomplete="new-password" minlength="8" required>
+            </div>
+          </div>
+          <button id="submit-button" class="auth-button" type="submit">Daftar akaun</button>
+        </form>
+        <p class="auth-note">Tarikh lahir dan maklumat tempat bertugas digunakan untuk pengurusan akaun sahaja. Password diuruskan oleh Firebase Authentication dan tidak disimpan dalam profil Firestore.</p>
+        <p class="auth-links">Sudah mempunyai akaun? <a href="./login.html">Log masuk</a></p>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="./register.js"></script>
+</body>
+</html>

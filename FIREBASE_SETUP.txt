@@ -1,0 +1,62 @@
+SETUP FIREBASE e-NGAT
+=====================
+
+Project ID: e-ngat-3e813
+Admin pertama: saffuan.jaffar@ipgm.edu.my
+
+1. Authentication
+   - Pastikan provider Email/Password berstatus Enabled.
+
+2. Firestore Rules
+   - Buka Firestore Database > Rules.
+   - Gantikan semua rules dengan kandungan fail firestore.rules.
+   - Klik Publish.
+   - Rules versi ini turut menyimpan status dan jawapan soal selidik setiap pengguna.
+   - Rules versi ini turut membenarkan rekod sesi penggunaan untuk analitik admin.
+   - Rules versi ini turut membenarkan pengguna menghantar laporan masalah dan gambar.
+
+3. Akaun admin pertama
+   - Buka Authentication > Users.
+   - Klik Add user.
+   - Masukkan emel: saffuan.jaffar@ipgm.edu.my
+   - Tetapkan password sendiri. Jangan kongsi password.
+   - Selepas fail laman dimuat naik, buka admin.html dan log masuk.
+   - Profil admin akan dicipta secara automatik pada log masuk pertama.
+   - Pendaftaran pengguna baharu akan berstatus "Menunggu pengesahan".
+   - Buka panel admin dan klik "Sahkan pendaftaran" sebelum pengguna boleh log masuk.
+   - Pentadbir juga boleh klik "Nyahaktifkan" atau "Aktifkan semula".
+
+4. Authorized domains
+   - Buka Authentication > Settings > Authorized domains.
+   - Pastikan msaffuanj89.github.io disenaraikan.
+
+5. GitHub Pages
+   - Cipta repository public baharu bernama e-NGAT_V6.
+   - Upload semua isi ZIP ke root repository e-NGAT_V6.
+   - index.html akan menghantar pengguna tanpa sesi ke login.html.
+   - Pautan akhir: https://msaffuanj89.github.io/e-NGAT_V6/
+   - Repository e-NGAT_V5 tidak perlu dipadam atau diubah.
+
+6. Soal selidik
+   - Soal selidik dibina terus dalam e-NGAT; Google Form tidak digunakan.
+   - Pop-up muncul selepas pengguna menggunakan aplikasi selama 3 minit.
+   - "Kemudian" dibenarkan sekali untuk setiap akaun.
+   - Selepas ditangguh, pop-up muncul semula selepas 3 minit dan tidak boleh ditutup.
+   - Selepas pengguna menghantar jawapan, pop-up automatik tidak akan muncul lagi.
+   - Status dan jawapan disimpan dalam Firestore pada users/{uid}/survey/engat-usage-2026.
+
+7. Analitik admin
+   - Sesi penggunaan baharu disimpan dalam collection usageEvents.
+   - Kursus MK direkodkan selepas pengguna memuat naik atau membuka fail MK.
+   - Panel admin menunjukkan kekerapan, kursus terakhir, penggunaan 7 hari
+     bilangan pensyarah mengikut IPG, serta status selesai/tangguh
+     dan analisis setiap item soal selidik.
+   - Statistik mula dikumpulkan hanya selepas versi ini dimuat naik.
+
+8. Report / laporan masalah
+   - Butang Report berada di sebelah kanan butang Soal Selidik.
+   - Pengguna boleh memilih jenis masalah, menulis penerangan dan melampirkan gambar.
+   - Gambar dikecilkan dalam pelayar sebelum disimpan dalam collection reports.
+   - Pentadbir boleh melihat laporan dan tangkap layar pada bahagian
+     "Laporan masalah pengguna" dalam Panel Pentadbir.
+   - WAJIB terbitkan kandungan firestore.rules versi ini sebelum menguji Report.

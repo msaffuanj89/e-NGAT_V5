@@ -1,0 +1,17 @@
+PENTING: Upload isi folder ini ke ROOT repository GitHub Pages.
+
+Fail index.html mesti berada terus di root repo, sama level dengan folder next-assets dan fail engat-logo-transparent.png.
+Jangan upload folder induk sebagai satu folder di dalam repo.
+Jangan upload source code/README sebagai laman GitHub Pages.
+
+Untuk repository baharu e-NGAT_V6:
+1. Cipta repository public bernama e-NGAT_V6.
+2. Upload SEMUA isi ZIP ini terus ke root repository e-NGAT_V6.
+3. Pastikan Settings > Pages menggunakan branch main dan folder /(root).
+4. Ikut FIREBASE_SETUP.txt untuk publish Firestore Rules, cipta akaun admin
+   dan tambah authorized domain GitHub Pages.
+5. Tunggu deployment selesai, kemudian buka:
+   https://msaffuanj89.github.io/e-NGAT_V6/
+6. Buat hard refresh browser (Ctrl+Shift+R atau Cmd+Shift+R).
+
+Nota: Repository e-NGAT_V5 tidak perlu dipadam atau diubah.

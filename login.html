@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Log Masuk | e-NGAT</title>
+  <meta name="description" content="Log masuk pengguna e-NGAT.">
+  <link rel="stylesheet" href="./auth.css?v=20260729-transparent-logo-v25">
+</head>
+<body>
+  <div class="auth-page">
+    <aside class="auth-brand">
+      <div class="auth-brand-inner">
+        <span class="auth-eyebrow">Navigator for Generated Academic Teaching Plans</span>
+        <img src="./engat-logo-transparent.png" alt="e-NGAT">
+        <h1>Rancang pengajaran dengan lebih tenang.</h1>
+        <p>Daripada fail MK kepada rancangan semester dan mingguan yang tersusun—dalam beberapa langkah sahaja.</p>
+        <div class="auth-highlights" aria-label="Kelebihan e-NGAT">
+          <span>✓ Susunan topik teratur</span>
+          <span>✓ Eksport PDF &amp; Excel</span>
+          <span>✓ Data pengguna dilindungi</span>
+        </div>
+      </div>
+    </aside>
+    <main class="auth-main">
+      <section class="auth-card" aria-labelledby="login-title">
+        <span class="auth-card-kicker">Selamat kembali</span>
+        <h2 id="login-title">Log masuk pengguna</h2>
+        <p class="auth-lead">Masukkan emel dan kata laluan yang telah didaftarkan.</p>
+        <div id="status" class="auth-status" role="alert" hidden></div>
+        <form id="login-form" class="auth-form">
+          <div class="auth-field">
+            <label for="email">Emel</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="nama@ipgm.edu.my" required>
+          </div>
+          <div class="auth-field">
+            <label for="password">Kata laluan</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Masukkan kata laluan" required>
+          </div>
+          <button id="submit-button" class="auth-button" type="submit">Log masuk</button>
+          <button id="reset-button" class="auth-button auth-button--secondary" type="button">Lupa kata laluan</button>
+        </form>
+        <div class="auth-link-group">
+          <p class="auth-links">Belum mempunyai akaun? <a href="./register.html">Daftar sekarang</a></p>
+          <p class="auth-links auth-links--admin"><a href="./admin.html">Log masuk pentadbir</a></p>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="./login.js"></script>
+</body>
+</html>

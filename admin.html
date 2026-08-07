@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel Pentadbir | e-NGAT</title>
+  <meta name="description" content="Log masuk dan panel pentadbir e-NGAT.">
+  <link rel="stylesheet" href="./auth.css?v=20260807-survey-charts-v29">
+</head>
+<body>
+  <div class="auth-page" id="admin-login-view">
+    <aside class="auth-brand">
+      <img src="./engat-logo-transparent.png" alt="e-NGAT">
+      <h1>Pengurusan e‑NGAT</h1>
+      <p>Halaman ini dikhaskan untuk pentadbir yang dibenarkan.</p>
+    </aside>
+    <main class="auth-main">
+      <section class="auth-card" aria-labelledby="admin-login-title">
+        <h2 id="admin-login-title">Log masuk pentadbir</h2>
+        <p class="auth-lead">Akses akan disahkan berdasarkan peranan akaun.</p>
+        <div id="admin-login-status" class="auth-status" role="alert" hidden></div>
+        <form id="admin-login-form" class="auth-form">
+          <div class="auth-field">
+            <label for="admin-email">Emel</label>
+            <input id="admin-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="auth-field">
+            <label for="admin-password">Password</label>
+            <input id="admin-password" name="password" type="password" autocomplete="current-password" required>
+          </div>
+          <button id="admin-login-button" class="auth-button" type="submit">Log masuk sebagai pentadbir</button>
+        </form>
+        <p class="auth-links"><a href="./login.html">Kembali ke log masuk pengguna</a></p>
+      </section>
+    </main>
+  </div>
+
+  <main id="admin-dashboard" class="auth-main" hidden>
+    <section class="auth-card auth-card--wide">
+      <div class="admin-topbar">
+        <div>
+          <h2>Panel Pentadbir e‑NGAT</h2>
+          <p class="auth-lead" id="admin-summary">Memuatkan pengguna...</p>
+        </div>
+        <div class="auth-actions">
+          <a class="auth-button auth-button--secondary" href="./index.html">Buka aplikasi</a>
+          <button id="admin-logout" class="auth-button auth-button--danger" type="button">Log keluar</button>
+        </div>
+      </div>
+      <div id="admin-status" class="auth-status" role="alert" hidden></div>
+      <section class="admin-metrics" aria-label="Ringkasan penggunaan">
+        <article class="admin-metric"><span>Pengguna</span><strong id="metric-users">0</strong></article>
+        <article class="admin-metric"><span>Sesi penggunaan</span><strong id="metric-sessions">0</strong></article>
+        <article class="admin-metric"><span>Aktif 7 hari</span><strong id="metric-active">0</strong></article>
+        <article class="admin-metric"><span>Soal selidik selesai</span><strong id="metric-survey">0%</strong></article>
+      </section>
+      <div class="auth-field" style="margin-bottom:1rem">
+        <label for="user-search">Cari pengguna</label>
+        <input id="user-search" type="search" placeholder="Nama, emel atau IPG">
+      </div>
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>Emel</th>
+              <th>IPG</th>
+              <th>Kekerapan</th>
+              <th>MK terakhir</th>
+              <th>Penggunaan terakhir</th>
+              <th>Soal selidik</th>
+              <th>Peranan</th>
+              <th>Status</th>
+              <th>Tindakan</th>
+            </tr>
+          </thead>
+          <tbody id="users-body"></tbody>
+        </table>
+      </div>
+      <div class="admin-analysis-grid">
+        <section class="admin-analysis-card">
+          <h3>Bilangan pensyarah mengikut IPG</h3>
+          <p class="auth-note">Bilangan akaun pengguna berdaftar bagi setiap kampus IPG.</p>
+          <div id="ipg-analysis" class="admin-breakdown"></div>
+        </section>
+        <section class="admin-analysis-card">
+          <h3>MK mengikut kursus</h3>
+          <p class="auth-note">Bilangan sesi yang merekodkan kursus daripada fail MK.</p>
+          <div id="course-analysis" class="admin-breakdown"></div>
+        </section>
+        <section class="admin-analysis-card">
+          <h3>Analisis soal selidik</h3>
+          <p class="auth-note">Status penyertaan pengguna dalam soal selidik e‑NGAT.</p>
+          <div id="survey-analysis" class="admin-breakdown"></div>
+        </section>
+      </div>
+      <section class="admin-survey-detail">
+        <div>
+          <h3>Analisis setiap item soalan</h3>
+          <p class="auth-note">Carta bilangan dan peratusan respons bagi setiap item, disusun seperti ringkasan Google Forms.</p>
+        </div>
+        <div id="survey-answer-analysis" class="admin-survey-sections"></div>
+      </section>
+      <section class="admin-survey-detail">
+        <div>
+          <h3>Laporan masalah pengguna</h3>
+          <p class="auth-note">Maklum balas teknikal dan tangkap layar yang dihantar melalui butang Report.</p>
+        </div>
+        <div id="report-analysis" class="admin-report-list"></div>
+      </section>
+    </section>
+  </main>
+  <script type="module" src="./admin.js?v=20260807-survey-charts-v29"></script>
+</body>
+</html>
